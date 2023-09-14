@@ -1,0 +1,140 @@
+/*1000*100*/
+/*650*900 cuadrado*/
+/*700*900*/
+/*1500*2000*/
+
+/*300400*/
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    background: #2f333f;
+}
+
+#contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /*1 de separacion*/
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas : "header header header"
+                            "nav nav nav"
+                            "contenido contenido sidebar"
+                            "widget-1 widget-2 sidebar"
+                            "footer footer footer";
+}
+
+.bordes{
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;/*8*/
+}
+
+/**#header{
+    background: #c94803;
+    color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}*/
+
+#header{
+    background: #fffc4b;
+    color: #fff;
+    grid-area: header;
+
+}
+
+nav{
+    grid-area: nav;
+    color: #fff;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: auto;
+}
+
+a{
+    padding: 20px;
+    background: #fffc4b;
+    /*backgrud*/
+}
+
+main{
+    grid-area: contenido;
+    background-color: #1f262c;
+}
+
+#sidebar{
+    grid-column: 3/4;/*-----------------------*/
+    background: #1763aa;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: sidebar;
+    /*grid-row: 2 / 4;*/
+}
+
+#widget-1{
+    grid-area: widget-1;
+}
+
+#wwidget-2{
+    grid-area: widget-2;
+    
+}
+
+footer{
+    background: #c94803;
+    color: #292929;
+    grid-area: footer;
+    text-align: center;
+
+}
+
+.wid{
+
+    color: #ffffff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1763aa;
+    /*background: #122f4b;*/
+
+}
+
+p{
+    color: #292929;
+}
+
+h1{
+    color: #292929; 
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    #contenedor{
+        grid-template-areas : 
+        "header header header"
+        "nav nav nav"
+        "contenido contenido contenido"
+        "sidebar sidebar sidebar"
+        "widget-1 widget-1 widget-2"
+        "footer footer footer";
+    }
+
+}
